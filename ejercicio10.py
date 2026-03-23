@@ -1,4 +1,4 @@
-import tkinter as tk
+﻿import tkinter as tk
 from tkinter import ttk, messagebox
 from tkinter import scrolledtext
 
@@ -15,12 +15,9 @@ class AbrirEjercicio10:
     
     def crear_interfaz(self):
         """Crea la interfaz del ejercicio 10"""
-        # Título
         titulo = tk.Label(self.ventana, text="SISTEMA DE PAGO DE TRABAJADORES",
                          font=("Arial", 14, "bold"), bg="#f0f0f0")
         titulo.pack(pady=10)
-        
-        # Frame entrada
         frame_entrada = ttk.LabelFrame(self.ventana, text="Registro de Trabajador")
         frame_entrada.pack(padx=20, pady=10, fill=tk.X)
         
@@ -43,28 +40,20 @@ class AbrirEjercicio10:
         tk.Label(frame_entrada, text="Número de Hijos:").grid(row=1, column=2, sticky=tk.W, padx=5, pady=5)
         self.entrada_hijos = tk.Entry(frame_entrada, width=25)
         self.entrada_hijos.grid(row=1, column=3, padx=5, pady=5)
-        
-        # Botón agregar
         btn_agregar = tk.Button(frame_entrada, text="Calcular y Registrar",
                                command=self.calcular_pago_trabajador,
                                bg="#4CAF50", fg="white", width=25)
         btn_agregar.grid(row=2, column=2, columnspan=2, pady=10, sticky=tk.EW, padx=5)
-        
-        # Frame resultados
         frame_resultados = ttk.LabelFrame(self.ventana, text="Reporte de Pagos")
         frame_resultados.pack(padx=20, pady=10, fill=tk.BOTH, expand=True)
         
         self.texto_resultado = scrolledtext.ScrolledText(frame_resultados, height=15)
         self.texto_resultado.pack(padx=5, pady=5, fill=tk.BOTH, expand=True)
-        
-        # Frame info
         frame_info = tk.Frame(self.ventana, bg="#f0f0f0")
         frame_info.pack(padx=20, pady=5, fill=tk.X)
         
         tk.Label(frame_info, text="Hora Extra: 50% más | Bonificación por hijo: S/. 0.50",
                 font=("Arial", 9), bg="#f0f0f0").pack()
-        
-        # Botones inferiores
         frame_botones = tk.Frame(self.ventana, bg="#f0f0f0")
         frame_botones.pack(padx=20, pady=10, fill=tk.X)
         
@@ -96,8 +85,6 @@ class AbrirEjercicio10:
             
             if horas_normales < 0 or pago_hora < 0 or horas_extras < 0 or hijos < 0:
                 raise ValueError("Los valores deben ser positivos")
-            
-            # Cálculos
             pago_normal = horas_normales * pago_hora
             pago_extra_hora = pago_hora * 1.5
             pago_extras = horas_extras * pago_extra_hora
@@ -118,8 +105,6 @@ class AbrirEjercicio10:
             })
             
             self.mostrar_reporte()
-            
-            # Limpiar campos
             self.entrada_nombre.delete(0, tk.END)
             self.entrada_horas_normales.delete(0, tk.END)
             self.entrada_pago_hora.delete(0, tk.END)
@@ -156,3 +141,5 @@ class AbrirEjercicio10:
         self.entrada_horas_extras.delete(0, tk.END)
         self.entrada_hijos.delete(0, tk.END)
         self.entrada_nombre.focus()
+
+

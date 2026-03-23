@@ -1,4 +1,4 @@
-import tkinter as tk
+﻿import tkinter as tk
 from tkinter import ttk, messagebox
 from tkinter import scrolledtext
 
@@ -15,12 +15,9 @@ class AbrirEjercicio1:
     
     def crear_interfaz(self):
         """Crea la interfaz del ejercicio 1"""
-        # Título
         titulo = tk.Label(self.ventana, text="SISTEMA DE AUMENTO DE SUELDOS",
                          font=("Arial", 14, "bold"), bg="#f0f0f0")
         titulo.pack(pady=10)
-        
-        # Frame entrada
         frame_entrada = ttk.LabelFrame(self.ventana, text="Registro de Trabajador")
         frame_entrada.pack(padx=20, pady=10, fill=tk.X)
         
@@ -31,21 +28,15 @@ class AbrirEjercicio1:
         tk.Label(frame_entrada, text="Sueldo Básico:").grid(row=1, column=0, sticky=tk.W, padx=5, pady=5)
         self.entrada_sueldo = tk.Entry(frame_entrada, width=30)
         self.entrada_sueldo.grid(row=1, column=1, padx=5, pady=5)
-        
-        # Botón agregar
         btn_agregar = tk.Button(frame_entrada, text="Agregar Trabajador",
                                command=self.agregar_trabajador,
                                bg="#4CAF50", fg="white")
         btn_agregar.grid(row=2, column=0, columnspan=2, pady=10, sticky=tk.EW, padx=5)
-        
-        # Frame resultados
         frame_resultados = ttk.LabelFrame(self.ventana, text="Historial de Trabajadores")
         frame_resultados.pack(padx=20, pady=10, fill=tk.BOTH, expand=True)
         
         self.texto_resultado = scrolledtext.ScrolledText(frame_resultados, height=15, width=80)
         self.texto_resultado.pack(padx=5, pady=5, fill=tk.BOTH, expand=True)
-        
-        # Botones inferiores
         frame_info = tk.Frame(self.ventana, bg="#f0f0f0")
         frame_info.pack(padx=20, pady=5, fill=tk.X)
         
@@ -124,3 +115,5 @@ class AbrirEjercicio1:
         self.texto_resultado.delete(1.0, tk.END)
         self.entrada_nombre.delete(0, tk.END)
         self.entrada_sueldo.delete(0, tk.END)
+
+

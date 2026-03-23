@@ -1,4 +1,4 @@
-import tkinter as tk
+﻿import tkinter as tk
 from tkinter import ttk, messagebox
 from tkinter import scrolledtext
 
@@ -17,17 +17,12 @@ class AbrirEjercicio9:
     
     def crear_interfaz(self):
         """Crea la interfaz del ejercicio 9"""
-        # Título
         titulo = tk.Label(self.ventana, text="SUMA HASTA SUPERAR LÍMITE (100)",
                          font=("Arial", 14, "bold"), bg="#f0f0f0")
         titulo.pack(pady=10)
-        
-        # Instrucción
         instruccion = tk.Label(self.ventana, text="Ingresa números enteros positivos",
                               font=("Arial", 10), bg="#f0f0f0")
         instruccion.pack()
-        
-        # Frame entrada
         frame_entrada = ttk.LabelFrame(self.ventana, text="Ingresa un número")
         frame_entrada.pack(padx=20, pady=10, fill=tk.X)
         
@@ -35,14 +30,10 @@ class AbrirEjercicio9:
         self.entrada_numero = tk.Entry(frame_entrada, width=20, font=("Arial", 12))
         self.entrada_numero.grid(row=0, column=1, padx=5, pady=10)
         self.entrada_numero.bind("<Return>", lambda e: self.agregar_numero())
-        
-        # Botón agregar
         btn_agregar = tk.Button(frame_entrada, text="Agregar",
                                command=self.agregar_numero,
                                bg="#4CAF50", fg="white", width=15)
         btn_agregar.grid(row=1, column=0, columnspan=2, pady=10, sticky=tk.EW, padx=5)
-        
-        # Frame progreso
         frame_progreso = tk.Frame(self.ventana, bg="#e3f2fd")
         frame_progreso.pack(padx=20, pady=5, fill=tk.X)
         
@@ -50,23 +41,17 @@ class AbrirEjercicio9:
         self.label_suma = tk.Label(frame_progreso, text="0", font=("Arial", 12, "bold"),
                                   bg="#e3f2fd", fg="#1976D2")
         self.label_suma.pack(side=tk.LEFT)
-        
-        # Frame resultados
         frame_resultados = ttk.LabelFrame(self.ventana, text="Números Ingresados")
         frame_resultados.pack(padx=20, pady=10, fill=tk.BOTH, expand=True)
         
         self.texto_resultado = scrolledtext.ScrolledText(frame_resultados, height=12)
         self.texto_resultado.pack(padx=5, pady=5, fill=tk.BOTH, expand=True)
-        
-        # Frame estadísticas
         frame_stats = tk.Frame(self.ventana, bg="#f3e5f5")
         frame_stats.pack(padx=20, pady=5, fill=tk.X)
         
         self.label_stats = tk.Label(frame_stats, text="Cantidad: 0",
                                    font=("Arial", 11, "bold"), bg="#f3e5f5")
         self.label_stats.pack(pady=5)
-        
-        # Botones inferiores
         frame_botones = tk.Frame(self.ventana, bg="#f0f0f0")
         frame_botones.pack(padx=20, pady=10, fill=tk.X)
         
@@ -132,3 +117,5 @@ class AbrirEjercicio9:
         self.label_suma.config(text="0")
         self.label_stats.config(text="Cantidad: 0")
         self.entrada_numero.focus()
+
+

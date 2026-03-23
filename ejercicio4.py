@@ -1,4 +1,4 @@
-import tkinter as tk
+﻿import tkinter as tk
 from tkinter import ttk, messagebox
 
 
@@ -15,12 +15,9 @@ class AbrirEjercicio4:
     
     def crear_interfaz(self):
         """Crea la interfaz del ejercicio 4"""
-        # Título
         titulo = tk.Label(self.ventana, text="VALIDACIÓN: NÚMERO MENOR QUE 10",
                          font=("Arial", 14, "bold"), bg="#f0f0f0")
         titulo.pack(pady=20)
-        
-        # Frame entrada
         frame_entrada = ttk.LabelFrame(self.ventana, text="Ingresa un número menor que 10")
         frame_entrada.pack(padx=20, pady=10, fill=tk.X)
         
@@ -28,14 +25,10 @@ class AbrirEjercicio4:
         self.entrada_numero = tk.Entry(frame_entrada, width=20, font=("Arial", 12))
         self.entrada_numero.grid(row=0, column=1, padx=5, pady=10)
         self.entrada_numero.bind("<Return>", lambda e: self.validar_numero())
-        
-        # Botón validar
         btn_validar = tk.Button(frame_entrada, text="Validar",
                                command=self.validar_numero,
                                bg="#4CAF50", fg="white", width=15)
         btn_validar.grid(row=1, column=0, columnspan=2, pady=10, sticky=tk.EW, padx=5)
-        
-        # Frame resultados
         frame_resultados = ttk.LabelFrame(self.ventana, text="Resultado")
         frame_resultados.pack(padx=20, pady=10, fill=tk.BOTH, expand=True)
         
@@ -46,8 +39,6 @@ class AbrirEjercicio4:
         self.label_resultado = tk.Label(frame_resultados, text="",
                                        font=("Arial", 12), bg="white", relief=tk.SUNKEN)
         self.label_resultado.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
-        
-        # Botones inferiores
         frame_botones = tk.Frame(self.ventana, bg="#f0f0f0")
         frame_botones.pack(padx=20, pady=10, fill=tk.X)
         
@@ -73,11 +64,11 @@ class AbrirEjercicio4:
             
             if numero < 10:
                 self.numero_valido = numero
-                self.label_resultado.config(text=f"✓ ¡CORRECTO!\nNúmero válido: {numero}\nIntentos realizados: {self.intentos}",
+                self.label_resultado.config(text=f"Correcto\nNúmero: {numero}\nIntentos: {self.intentos}",
                                            fg="green")
                 self.entrada_numero.config(state=tk.DISABLED)
             else:
-                self.label_resultado.config(text=f"✗ ERROR: El número debe ser menor que 10\nIntento {self.intentos}",
+                self.label_resultado.config(text=f"Error: debe ser menor que 10\nIntento: {self.intentos}",
                                            fg="red")
             
             self.label_intentos.config(text=f"Intentos: {self.intentos}")
@@ -95,3 +86,5 @@ class AbrirEjercicio4:
         self.label_intentos.config(text="Intentos: 0")
         self.label_resultado.config(text="")
         self.entrada_numero.focus()
+
+

@@ -1,4 +1,4 @@
-import tkinter as tk
+﻿import tkinter as tk
 from ejercicio1 import AbrirEjercicio1
 from ejercicio2 import AbrirEjercicio2
 from ejercicio3 import AbrirEjercicio3
@@ -24,8 +24,6 @@ class MenuPrincipal:
         """Muestra el menú principal con 10 botones"""
         for widget in self.ventana_principal.winfo_children():
             widget.destroy()
-        
-        # Título
         titulo = tk.Label(self.ventana_principal, text="MENÚ PRINCIPAL", 
                          font=("Arial", 18, "bold"), bg="#f0f0f0")
         titulo.pack(pady=20)
@@ -34,8 +32,6 @@ class MenuPrincipal:
                             text="Selecciona un ejercicio para ejecutar",
                             font=("Arial", 12), bg="#f0f0f0")
         subtitulo.pack(pady=10)
-        
-        # Frame para los botones
         frame_botones = tk.Frame(self.ventana_principal, bg="#f0f0f0")
         frame_botones.pack(pady=20, padx=20, fill=tk.BOTH, expand=True)
         
@@ -59,8 +55,6 @@ class MenuPrincipal:
                            bg="#4CAF50", fg="white", relief=tk.RAISED,
                            cursor="hand2")
             btn.pack(pady=8, fill=tk.X)
-        
-        # Botón de salida
         btn_salida = tk.Button(self.ventana_principal, text="Salir",
                               command=self.ventana_principal.quit,
                               width=40, height=2, font=("Arial", 10),
@@ -81,3 +75,5 @@ if __name__ == "__main__":
     ventana = tk.Tk()
     app = MenuPrincipal(ventana)
     ventana.mainloop()
+
+

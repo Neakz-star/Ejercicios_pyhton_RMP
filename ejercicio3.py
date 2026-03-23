@@ -1,4 +1,4 @@
-import tkinter as tk
+﻿import tkinter as tk
 from tkinter import ttk, messagebox
 from tkinter import scrolledtext
 
@@ -15,12 +15,9 @@ class AbrirEjercicio3:
     
     def crear_interfaz(self):
         """Crea la interfaz del ejercicio 3"""
-        # Título
         titulo = tk.Label(self.ventana, text="SISTEMA DE DESCUENTOS POR MES",
                          font=("Arial", 14, "bold"), bg="#f0f0f0")
         titulo.pack(pady=10)
-        
-        # Frame entrada
         frame_entrada = ttk.LabelFrame(self.ventana, text="Registro de Compra")
         frame_entrada.pack(padx=20, pady=10, fill=tk.X)
         
@@ -35,36 +32,26 @@ class AbrirEjercicio3:
         tk.Label(frame_entrada, text="Importe de Compra:").grid(row=2, column=0, sticky=tk.W, padx=5, pady=5)
         self.entrada_importe = tk.Entry(frame_entrada, width=30)
         self.entrada_importe.grid(row=2, column=1, padx=5, pady=5)
-        
-        # Botón agregar
         btn_agregar = tk.Button(frame_entrada, text="Registrar Compra",
                                command=self.registrar_compra,
                                bg="#4CAF50", fg="white")
         btn_agregar.grid(row=3, column=0, columnspan=2, pady=10, sticky=tk.EW, padx=5)
-        
-        # Frame resultados
         frame_resultados = ttk.LabelFrame(self.ventana, text="Historial de Compras")
         frame_resultados.pack(padx=20, pady=10, fill=tk.BOTH, expand=True)
         
         self.texto_resultado = scrolledtext.ScrolledText(frame_resultados, height=12, width=80)
         self.texto_resultado.pack(padx=5, pady=5, fill=tk.BOTH, expand=True)
-        
-        # Frame total
         frame_total = tk.Frame(self.ventana, bg="#e8f5e9")
         frame_total.pack(padx=20, pady=5, fill=tk.X)
         
         self.label_total = tk.Label(frame_total, text="Total Vendido: S/. 0.00",
                                     font=("Arial", 12, "bold"), bg="#e8f5e9")
         self.label_total.pack(pady=5)
-        
-        # Frame info
         frame_info = tk.Frame(self.ventana, bg="#f0f0f0")
         frame_info.pack(padx=20, pady=5, fill=tk.X)
         
         tk.Label(frame_info, text="Promociones: Octubre (15%), Diciembre (20%), Julio (10%), Otros (0%)",
                 font=("Arial", 9), bg="#f0f0f0").pack()
-        
-        # Botones inferiores
         frame_botones = tk.Frame(self.ventana, bg="#f0f0f0")
         frame_botones.pack(padx=20, pady=10, fill=tk.X)
         
@@ -79,11 +66,11 @@ class AbrirEjercicio3:
     
     def calcular_descuento(self, mes):
         """Calcula el descuento según el mes"""
-        if mes == 10:  # Octubre
+        if mes == 10:
             return 0.15
-        elif mes == 12:  # Diciembre
+        elif mes == 12:
             return 0.20
-        elif mes == 7:  # Julio
+        elif mes == 7:
             return 0.10
         else:
             return 0.0
@@ -155,3 +142,5 @@ class AbrirEjercicio3:
         self.entrada_cliente.delete(0, tk.END)
         self.entrada_mes.delete(0, tk.END)
         self.entrada_importe.delete(0, tk.END)
+
+
